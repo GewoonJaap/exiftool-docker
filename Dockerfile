@@ -10,7 +10,8 @@ RUN apk add --no-cache \
     unzip \
     sudo \
     git \
-    bash
+    bash \
+    perl
 
 RUN git clone https://github.com/exiftool/exiftool.git /usr/src/app/exiftool
 
