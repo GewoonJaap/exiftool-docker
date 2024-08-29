@@ -30,3 +30,7 @@ Now attach a console to the Docker container and run the ExifTool CLI commands a
 ```sh
 ./exiftool "-FileCreateDate<FileCreateDate" "-FileModifyDate<FileCreateDate" -ext .mp4 -ext .jpg -ext .jpeg -ext .heic -ext .MOV -ext .png <PHOTO DIR>
 ```
+
+```sh
+./exiftool "-FileCreateDate<CreateDate" "-FileModifyDate<CreateDate" -ext .mp4 -ext .jpg -ext .jpeg -ext .heic -ext .MOV -ext .png <PHOTO DIR>
+```
