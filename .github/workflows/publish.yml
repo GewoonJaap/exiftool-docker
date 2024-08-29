@@ -71,11 +71,11 @@ jobs:
           tags: |
             type=ref,event=branch
             latest
-            ${{ steps.check_release.outputs.latest_tag }}
+            ${{ steps.check_tag.outputs.latest_tag }}
 
       - name: Build and push Docker image
         id: push
-        if: steps.check_release.outputs.new_tag == 'true'
+        if: steps.check_tag.outputs.new_tag == 'true'
         uses: docker/build-push-action@v2
         with:
           context: .
@@ -85,10 +85,10 @@ jobs:
           platforms: linux/amd64,linux/arm64,linux/arm/v7
 
       - name: Commit last release
-        if: steps.check_release.outputs.new_tag == 'true'
+        if: steps.check_tag.outputs.new_tag == 'true'
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Update last release to ${{ steps.check_release.outputs.latest_tag }}"
+          commit_message: "Update last release to ${{ steps.check_tag.outputs.latest_tag }}"
           branch: main
           file_pattern: ${{ env.LAST_RELEASE_FILE }}
           commit_user_name: "github-actions"
