@@ -32,6 +32,7 @@ The `exiftool` executable is available in the container, in the exiftool/ folder
 ```sh
 cd exiftool
 ./exiftool "-FileCreateDate<FileCreateDate" "-FileModifyDate<FileCreateDate" -ext .mp4 -ext .jpg -ext .jpeg -ext .heic -ext .MOV -ext .png /data
+```
 
 ```sh
 cd exiftool
