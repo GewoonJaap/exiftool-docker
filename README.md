@@ -7,7 +7,7 @@ This repository provides a Docker container for the ExifTool CLI, allowing you t
 
 - Docker installed on your machine.
 
-## Building the Docker Image
+## Building the Docker Image (OPTIONAL)
 
 To build the Docker image, run the following command:
 
