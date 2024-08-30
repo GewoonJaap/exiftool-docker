@@ -20,17 +20,20 @@ This command will build the Docker image for the appropriate architecture (amd64
 ## Running the Docker Container
 - Run the docker container with the following command:
 ```sh
-docker run --rm -v $(pwd):/data exiftool-docker:latest
+docker run -it -v <MEDIALOCATION>:/data ghcr.io/gewoonjaap/exiftool-docker:latest
 ```
 
 This command will run the ExifTool CLI in the Docker container and mount the current directory to the `/data` directory in the container.
 Now attach a console to the Docker container and run the ExifTool CLI commands as you would on your local machine.
 
 ### Example command
+You can replace `/data` with any other direction you want.
+The `exiftool` executable is available in the container, in the exiftool/ folder, so you can run any ExifTool CLI command you would like.
 ```sh
-./exiftool "-FileCreateDate<FileCreateDate" "-FileModifyDate<FileCreateDate" -ext .mp4 -ext .jpg -ext .jpeg -ext .heic -ext .MOV -ext .png <PHOTO DIR>
-```
+cd exiftool
+./exiftool "-FileCreateDate<FileCreateDate" "-FileModifyDate<FileCreateDate" -ext .mp4 -ext .jpg -ext .jpeg -ext .heic -ext .MOV -ext .png /data
 
 ```sh
-./exiftool "-FileCreateDate<CreateDate" "-FileModifyDate<CreateDate" -ext .mp4 -ext .jpg -ext .jpeg -ext .heic -ext .MOV -ext .png <PHOTO DIR>
+cd exiftool
+./exiftool "-FileCreateDate<CreateDate" "-FileModifyDate<CreateDate" -ext .mp4 -ext .jpg -ext .jpeg -ext .heic -ext .MOV -ext .png /data
 ```
