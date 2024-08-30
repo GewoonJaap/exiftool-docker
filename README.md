@@ -23,7 +23,7 @@ This command will build the Docker image for the appropriate architecture (amd64
 docker run -it -v <MEDIALOCATION>:/data ghcr.io/gewoonjaap/exiftool-docker:latest
 ```
 
-This command will run the ExifTool CLI in the Docker container and mount the current directory to the `/data` directory in the container.
+This command will run the ExifTool CLI in the Docker container and mount the desired directory to the `/data` directory in the container.
 Now attach a console to the Docker container and run the ExifTool CLI commands as you would on your local machine.
 
 ### Example command
